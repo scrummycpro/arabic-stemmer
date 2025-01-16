@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Upload Arabic Text File{% endblock %}
+{% block content %}
+<h1 class="mt-4">Upload Arabic Text File</h1>
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="file" class="form-label">Choose a text file</label>
+        <input type="file" class="form-control" id="file" name="file" accept=".txt" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Upload and Process</button>
+</form>
+{% endblock %}

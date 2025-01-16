@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Processed Arabic Text{% endblock %}
+{% block content %}
+<h1>Cleaned and Stemmed Arabic Text</h1>
+
+<h2>Cleaned Text</h2>
+<p>{{ cleaned_text }}</p>
+
+<h2>Stemmed Words</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Original Word</th>
+            <th>Stemmed Word</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for original, stemmed in stemmed_words %}
+        <tr>
+            <td>{{ original }}</td>
+            <td>{{ stemmed }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{{ url_for('download_file', filename=csv_filename) }}" class="btn btn-success">Download CSV</a>
+<a href="{{ url_for('index') }}" class="btn btn-secondary">Upload Another File</a>
+{% endblock %}
