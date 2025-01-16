@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Cleaned Text{% endblock %}
+{% block content %}
+<h1>Cleaned Arabic Text</h1>
+<div style="font-size: 1.5rem; line-height: 2;">
+    <p>{{ cleaned_text }}</p>
+</div>
+<a href="{{ url_for('download_file', filename='cleaned_text.txt') }}" class="btn btn-success">Download Cleaned Text</a>
+<a href="{{ url_for('index') }}" class="btn btn-secondary">Go Back</a>
+{% endblock %}
